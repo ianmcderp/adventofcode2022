@@ -25,6 +25,7 @@ public class Day2 implements Puzzle {
     }
 
     @Override
+    @Question(description = "Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?")
     public int solveSecondPuzzle() {
         return 0;
     }
