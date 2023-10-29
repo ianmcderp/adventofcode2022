@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class Day1Test {
 
@@ -17,17 +15,6 @@ public class Day1Test {
     @SneakyThrows
     @BeforeAll
     public static void beforeAll() {
-        List<Elf> elves = List.of(
-                elf(1000, 2000, 3000),
-                elf(4000),
-                elf(5000, 6000),
-                elf(7000, 8000, 9000),
-                elf(10000)
-        );
-
-        InputReader mockedInputReader = mock(InputReader.class);
-        when(mockedInputReader.loadData()).thenReturn(elves);
-
         puzzle = new Day1();
         puzzle.setup();
     }
