@@ -28,7 +28,7 @@ public class Day1Test {
         InputReader mockedInputReader = mock(InputReader.class);
         when(mockedInputReader.loadData()).thenReturn(elves);
 
-        puzzle = Day1.builder().caloriesReader(mockedInputReader).build();
+        puzzle = new Day1();
         puzzle.setup();
     }
 

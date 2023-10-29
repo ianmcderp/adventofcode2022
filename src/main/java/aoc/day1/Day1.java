@@ -2,17 +2,16 @@ package aoc.day1;
 
 import aoc.Puzzle;
 import aoc.Question;
-import lombok.Builder;
+import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.OptionalInt;
 
-@Builder
+@NoArgsConstructor
 public class Day1 implements Puzzle {
-    @Builder.Default
-    private InputReader caloriesReader = new CaloriesReader();
+    private final InputReader caloriesReader = new CaloriesReader();
     private List<Elf> elves;
 
     @SneakyThrows

@@ -12,7 +12,7 @@ public class Main {
 
     @SneakyThrows
     public static void main(String[] args) {
-        puzzles.add(Day1.builder().build());
+        puzzles.add(new Day1());
         puzzles.add(new Day2());
 
         puzzles.forEach(PuzzleSolver::solve);
