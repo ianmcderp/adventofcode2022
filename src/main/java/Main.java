@@ -1,6 +1,7 @@
 import aoc.Puzzle;
 import aoc.PuzzleSolver;
 import aoc.day1.Day1;
+import aoc.day2.Day2;
 import lombok.SneakyThrows;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ public class Main {
     @SneakyThrows
     public static void main(String[] args) {
         puzzles.add(Day1.builder().build());
+        puzzles.add(new Day2());
 
         puzzles.forEach(PuzzleSolver::solve);
     }
