@@ -1,5 +1,7 @@
 package aoc.day1;
 
+import aoc.Puzzle;
+import aoc.Question;
 import lombok.Builder;
 import lombok.SneakyThrows;
 
@@ -8,7 +10,7 @@ import java.util.List;
 import java.util.OptionalInt;
 
 @Builder
-public class Day1 {
+public class Day1 implements Puzzle {
     @Builder.Default
     private InputReader caloriesReader = new CaloriesReader();
     private List<Elf> elves;
@@ -18,6 +20,7 @@ public class Day1 {
         elves = caloriesReader.loadData();
     }
 
+    @Question(description = "Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?")
     public int solveFirstPuzzle() {
         OptionalInt maxCalories = elves.stream()
                 .mapToInt(elf -> elf.getCalories().stream().mapToInt(Integer::intValue).sum())
@@ -26,6 +29,7 @@ public class Day1 {
         return maxCalories.getAsInt();
     }
 
+    @Question(description = "Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?")
     public int solveSecondPuzzle() {
 
         return elves.stream()
