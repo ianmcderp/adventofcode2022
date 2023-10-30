@@ -21,6 +21,8 @@ public class GameStrategyReader implements InputReader<GameStrategy> {
             gameStrategies.add(new GameStrategy(Shape.fromEncodedInput(encodedInputs[1]), Shape.fromEncodedInput(encodedInputs[0])));
         }
 
+        reader.close();
+
         return gameStrategies;
     }
 }
