@@ -16,6 +16,30 @@ public class ItemFinderTest {
     }
 
     private char find(String rawContent) {
-        return ItemFinder.find(new Rucksack(rawContent));
+        return ItemFinder.findInRucksack(new Rucksack(rawContent));
+    }
+
+    @Test
+    void givenThreeContents_whenFind_thenVerifyThatFound() {
+        assertEquals(
+                'r',
+                finds(
+                        "vJrwpWtwJgWrhcsFMMfFFhFp",
+                        "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL",
+                        "PmmdzqPrVvPwwTWBwg"
+                )
+        );
+        assertEquals(
+                'Z',
+                finds(
+                        "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn",
+                        "ttgJtRGJQctTZtZT",
+                        "CrZsJsPPZsGzwwsLwLmpwMDw"
+                )
+        );
+    }
+
+    private char finds(String first, String second, String third) {
+        return ItemFinder.findInRucksacks(new Rucksack(first), new Rucksack(second), new Rucksack(third));
     }
 }

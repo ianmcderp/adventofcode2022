@@ -1,7 +1,7 @@
 package aoc.day3;
 
 public class ItemFinder {
-    public static char find(Rucksack rucksack) {
+    public static char findInRucksack(Rucksack rucksack) {
         // split content in to compartments
         String rawContent = rucksack.getRawContent();
         String firstCompartment = rawContent.substring(0, rawContent.length() / 2);
@@ -16,6 +16,17 @@ public class ItemFinder {
             }
         }
 
+        return commonCharacter;
+    }
+
+    public static char findInRucksacks(Rucksack first, Rucksack second, Rucksack third) {
+        char commonCharacter = Character.UNASSIGNED;
+        for (char fc : first.getRawContent().toCharArray()) {
+            if (second.getRawContent().indexOf(fc) > -1 && third.getRawContent().indexOf(fc) > -1) {
+                commonCharacter = fc;
+                break;
+            }
+        }
         return commonCharacter;
     }
 }

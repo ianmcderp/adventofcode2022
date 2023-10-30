@@ -22,4 +22,13 @@ public class Day3Test {
         // then
         assertEquals(157, result);
     }
+
+    @Test
+    void givenInput_whenSolveSecondPuzzle_thenVerifyResultIsCorrect() {
+        // when
+        int result = puzzle.solveSecondPuzzle();
+
+        // then
+        assertEquals(70, result);
+    }
 }
