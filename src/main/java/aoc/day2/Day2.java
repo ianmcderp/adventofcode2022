@@ -21,12 +21,14 @@ public class Day2 implements Puzzle {
     @Override
     @Question(description = "What would your total score be if everything goes exactly according to your strategy guide?")
     public int solveFirstPuzzle() {
-        return gameStrategy.stream().mapToInt(GameStrategyEvaluator::evaluate).sum();
+        return gameStrategy.stream().mapToInt(GameStrategyEvaluator::evaluateByPairs).sum();
     }
 
     @Override
     @Question(description = "Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?")
     public int solveSecondPuzzle() {
-        return 0;
+        return gameStrategy.stream()
+                .map(strategy -> new GamePlan(strategy.theirShape, Result.fromEncodedInput(strategy.myShape.getEncodedShapeIdentifier())))
+                .mapToInt(GameStrategyEvaluator::evaluateByResult).sum();
     }
 }

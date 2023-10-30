@@ -1,7 +1,10 @@
 package aoc.day2;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 
+@Getter
 public enum Shape {
     MY_ROCK("X"),
     MY_PAPER("Y"),
@@ -17,6 +20,9 @@ public enum Shape {
     }
 
     public static Shape fromEncodedInput(String encodedInput) {
-        return Arrays.stream(Shape.values()).filter(shape -> shape.encodedShapeIdentifier.equals(encodedInput)).findFirst().get();
+        return Arrays.stream(Shape.values())
+                .filter(shape -> shape.getEncodedShapeIdentifier().equals(encodedInput))
+                .findFirst()
+                .get();
     }
 }
