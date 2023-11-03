@@ -17,4 +17,8 @@ public class Assignement {
     public boolean isWithin(Assignement assignement) {
         return assignement.getLower() <= this.lower && assignement.getUpper() >= this.upper;
     }
+
+    public boolean overlaps(Assignement assignement) {
+        return assignement.getLower() <= this.getUpper() && assignement.getUpper() >= this.getLower();
+    }
 }

@@ -26,7 +26,11 @@ public class Day4 implements Puzzle {
     }
 
     @Override
+    @Question(description = "In how many assignment pairs do the ranges overlap?")
     public int solveSecondPuzzle() {
-        return 0;
+        long count = this.assignementPairs.stream()
+                .filter(pair -> pair.getRight().overlaps(pair.getLeft()) || pair.getLeft().overlaps(pair.getRight()))
+                .count();
+        return (int) count;
     }
 }

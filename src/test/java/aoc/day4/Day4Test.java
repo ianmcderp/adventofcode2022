@@ -28,6 +28,10 @@ public class Day4Test implements DayTest {
     @Override
     @Test
     public void givenInput_whenSolveSecondPuzzle_thenVerifyResultIsCorrect() {
+        // when
+        int result = this.puzzle.solveSecondPuzzle();
 
+        // then
+        assertEquals(4, result);
     }
 }
