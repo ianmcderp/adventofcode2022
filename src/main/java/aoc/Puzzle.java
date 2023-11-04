@@ -1,9 +1,9 @@
 package aoc;
 
-public interface Puzzle {
+public interface Puzzle<T> {
     void setup();
 
-    int solveFirstPuzzle();
+    T solveFirstPuzzle();
 
-    int solveSecondPuzzle();
+    T solveSecondPuzzle();
 }

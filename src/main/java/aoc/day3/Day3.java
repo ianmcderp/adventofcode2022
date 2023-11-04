@@ -7,7 +7,7 @@ import lombok.SneakyThrows;
 
 import java.util.List;
 
-public class Day3 implements Puzzle {
+public class Day3 implements Puzzle<Integer> {
     private InputReader<Rucksack> rucksacksReader = new RucksacksReader();
     private List<Rucksack> rucksacks;
 
@@ -19,7 +19,7 @@ public class Day3 implements Puzzle {
 
     @Override
     @Question(description = "What is the sum of the priorities of those item types?")
-    public int solveFirstPuzzle() {
+    public Integer solveFirstPuzzle() {
         return rucksacks.stream()
                 .map(ItemFinder::findInRucksack)
                 .mapToInt(PriorityUtils::getPriority)
@@ -28,7 +28,7 @@ public class Day3 implements Puzzle {
 
     @Override
     @Question(description = "What is the sum of the priorities of those item types?")
-    public int solveSecondPuzzle() {
+    public Integer solveSecondPuzzle() {
         int sumPriority = 0;
 
         for (int rucksackIdx = 0; rucksackIdx < rucksacks.size(); rucksackIdx += 3) {

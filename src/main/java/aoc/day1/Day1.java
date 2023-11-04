@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.OptionalInt;
 
 @NoArgsConstructor
-public class Day1 implements Puzzle {
+public class Day1 implements Puzzle<Integer> {
     private final InputReader caloriesReader = new CaloriesReader();
     private List<Elf> elves;
 
@@ -20,7 +20,7 @@ public class Day1 implements Puzzle {
     }
 
     @Question(description = "Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?")
-    public int solveFirstPuzzle() {
+    public Integer solveFirstPuzzle() {
         OptionalInt maxCalories = elves.stream()
                 .mapToInt(elf -> elf.getCalories().stream().mapToInt(Integer::intValue).sum())
                 .max();
@@ -29,7 +29,7 @@ public class Day1 implements Puzzle {
     }
 
     @Question(description = "Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?")
-    public int solveSecondPuzzle() {
+    public Integer solveSecondPuzzle() {
 
         return elves.stream()
                 .map(elf -> elf.getCalories().stream().mapToInt(Integer::intValue).sum())
