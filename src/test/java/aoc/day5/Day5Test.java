@@ -29,6 +29,10 @@ public class Day5Test implements DayTest {
     @Override
     @Test
     public void givenInput_whenSolveSecondPuzzle_thenVerifyResultIsCorrect() {
+        // when
+        String result = puzzle.solveSecondPuzzle();
 
+        // then
+        assertEquals("MCD", result);
     }
 }

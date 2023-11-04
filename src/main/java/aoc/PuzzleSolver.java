@@ -9,10 +9,9 @@ import java.lang.reflect.Method;
 public class PuzzleSolver {
     @SneakyThrows
     public static void solve(Puzzle puzzle) {
-        puzzle.setup();
-
         Method firstPuzzle = puzzle.getClass().getMethod("solveFirstPuzzle");
         if (firstPuzzle.isAnnotationPresent(Question.class)) {
+            puzzle.setup();
             log.info(
                     firstPuzzle.getAnnotation(Question.class).description() +
                             " " +
@@ -22,6 +21,7 @@ public class PuzzleSolver {
 
         Method secondPuzzle = puzzle.getClass().getMethod("solveSecondPuzzle");
         if (secondPuzzle.isAnnotationPresent(Question.class)) {
+            puzzle.setup();
             log.info(
                     secondPuzzle.getAnnotation(Question.class).description() +
                             " " +
