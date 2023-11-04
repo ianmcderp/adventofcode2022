@@ -17,11 +17,12 @@ public class Day6 implements Puzzle<Integer> {
     @Override
     @Question(description = "How many characters need to be processed before the first start-of-packet marker is detected?")
     public Integer solveFirstPuzzle() {
-        return MarkerFinder.find(sequence);
+        return MarkerFinder.find(sequence, 4);
     }
 
     @Override
+    @Question(description = "How many characters need to be processed before the first start-of-message marker is detected?")
     public Integer solveSecondPuzzle() {
-        return null;
+        return MarkerFinder.find(sequence, 14);
     }
 }
